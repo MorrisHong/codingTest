@@ -1,5 +1,4 @@
 package codingTest;
-
 import java.util.Scanner;
 
 public class DrawingStar {
@@ -12,6 +11,7 @@ public class DrawingStar {
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
 		int b = sc.nextInt();
+		sc.close();
 		
 		for(int i = 0; i < b; i++) {
 			for(int j = 0; j < a; j++) {
@@ -19,6 +19,5 @@ public class DrawingStar {
 			}
 			System.out.println("");
 		}
-		
 	}
 }
