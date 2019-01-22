@@ -10,7 +10,13 @@ public class MakeJadenCase {
 //	첫 문자가 영문이 아닐때에는 이어지는 영문은 소문자로 씁니다. ( 첫번째 입출력 예 참고 )
 	public static String solution(String s) {
 		String[] ss = s.split(" ");
+		
+		if(s.substring(s.length() - 1, s.length()).equals(" ")) {
+			ss[ss.length-1] += " ";
+		}
+		
 		String answer = "";
+		
 		for (int i = 0; i < ss.length; i++) {
 			char[] temp = new char[ss[i].length()];
 			temp = ss[i].toCharArray();
@@ -22,16 +28,17 @@ public class MakeJadenCase {
 				temp[0] = Character.toUpperCase(temp[0]);
 			}
 			
-			answer += " " + String.valueOf(temp);
+			answer += " "+String.valueOf(temp);
 		}
+
+		answer = answer.substring(1, answer.length());
 		System.out.println(answer);
-		answer = answer.substring(0, answer.length());
 		
 		return answer;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(solution("3people unFollowed me"));
+		System.out.println(solution("3people unFollowed me "));
 	}
 
 }
